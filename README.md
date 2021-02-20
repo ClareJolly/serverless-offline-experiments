@@ -1,10 +1,20 @@
-# Serverless Offline Experiments
+# Serverless Offline Experiments <!-- omit in toc -->
 
 Trying out a few things using serverless offline - specifically related to AWS Services:
 
 - lambda
 - dynamoDb
 - S3
+
+---
+
+## Contents <!-- omit in toc -->
+
+- [Pre-requisites](#pre-requisites)
+- [Set up](#set-up)
+- [Troubleshooting](#troubleshooting)
+  - [In case the ports stay open](#in-case-the-ports-stay-open)
+- [Acknowledgements](#acknowledgements)
 
 ---
 
