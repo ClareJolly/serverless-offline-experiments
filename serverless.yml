@@ -12,14 +12,15 @@ provider:
 plugins:
   - serverless-dynamodb-local
   - serverless-bundle
+  - serverless-s3-local
   - serverless-offline  # should be last in list
 
 custom:
   bundle:
     linting: true
-    # copyFiles:                      # Copy any additional files to the generated package
-    #   - from: 'data/*'              # Where the files are currently
-    #     to: './'                      # Where in the package should they go
+    copyFiles:                      # Copy any additional files to the generated package
+      - from: 'buckets/*'              # Where the files are currently
+        to: './'                      # Where in the package should they go
   dynamoDb: 
     start:
       port: 8000
@@ -33,6 +34,11 @@ custom:
             sources: [./data/initialSeed.json]
   endpoints:
     dynamodb-url: 'http://localhost:8000'
+  s3:
+    address: localhost
+    host: localhost
+    directory: '/buckets'
+    noStart: false
 
   tableNames:
     persons: 'cc-persons'
@@ -70,3 +76,5 @@ functions:
 
 resources:
   - ${file(resources/persons-table.yml)}
+  - ${file(resources/s3.yml)}
+

@@ -1,2 +1,4 @@
 node_modules
 .dynamodb
+.webpack
+yarn-error.log

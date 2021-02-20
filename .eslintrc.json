@@ -25,7 +25,8 @@
     "max-nested-callbacks": ["error", 3],
     "max-statements": ["error", 10],
     "prefer-destructuring": "off",
-    "semi": "off"
+    "semi": "off",
+    "new-cap": "off"
   },
   "parser": "babel-eslint"
 }
