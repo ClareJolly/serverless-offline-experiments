@@ -1,0 +1,19 @@
+{
+  "name": "offline-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start:offline": "serverless offline start",
+    "install:db": "serverless dynamodb install"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.848.0",
+    "express": "^4.17.1",
+    "serverless": "^2.25.2",
+    "serverless-dynamodb-local": "^0.2.39",
+    "serverless-http": "^2.7.0",
+    "serverless-offline": "^6.8.0",
+    "serverless-webpack": "^5.3.5"
+  }
+}
