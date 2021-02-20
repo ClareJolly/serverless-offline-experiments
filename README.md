@@ -33,7 +33,10 @@ Clone the repo
 Note: for some reason I am having to run these commands with `sudo` - I need to look into why and alternative solutions
 
 - install database `sudo yarn install:db`
-- start offline server: `sudo yarn start:offline`
+- start database `sudo yarn start:db`
+- invoke main lambda `sudo yarn invoke`
+
+~~- start offline server: `sudo yarn start:offline`~~
 
 ---
 

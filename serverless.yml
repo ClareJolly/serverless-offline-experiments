@@ -1,10 +1,36 @@
 service: codecentric-sls-offline
 
+provider:
+  name: aws
+  runtime: nodejs8.10
+  region: eu-central-1
+  environment:
+    IS_OFFLINE: true
+    CONFIG_PERSONS_TABLE: ${self:custom.tableNames.persons}
+    CONFIG_DYNAMODB_ENDPOINT: ${self:custom.endpoints.dynamodb-url}
+
 plugins:
   - serverless-dynamodb-local
+  - serverless-bundle
   - serverless-offline  # should be last in list
 
 custom:
+  bundle:
+    linting: true
+    # copyFiles:                      # Copy any additional files to the generated package
+    #   - from: 'data/*'              # Where the files are currently
+    #     to: './'                      # Where in the package should they go
+  dynamoDb: 
+    start:
+      port: 8000
+      inMemory: true
+      migrate: true
+      seed: true
+    seed:
+      domain:
+        sources:
+          - table: cc-persons
+            sources: [./data/initialSeed.json]
   endpoints:
     dynamodb-url: 'http://localhost:8000'
 
@@ -20,16 +46,13 @@ custom:
     stages:
       - dev
 
-provider:
-  name: aws
-  runtime: nodejs8.10
-  region: eu-central-1
-  environment:
-    CONFIG_PERSONS_TABLE: ${self:custom.tableNames.persons}
-    CONFIG_DYNAMODB_ENDPOINT: ${self:custom.endpoints.dynamodb-url}
 
 
 functions:
+  main:
+    handler: src/index.handler
+  seed:
+    handler: utils/seed/index.handler
 
   persons:
     timeout: 30
