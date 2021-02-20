@@ -18,7 +18,7 @@ Trying out a few things using serverless offline - specifically related to AWS S
 
 Clone the repo
 
--
+- `yarn`
 
 Note: for some reason I am having to run these commands with `sudo` - I need to look into why and alternative solutions
 
