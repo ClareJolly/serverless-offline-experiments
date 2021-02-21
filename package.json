@@ -7,7 +7,7 @@
     "start:offline": "serverless offline start",
     "install:db": "serverless dynamodb install",
     "start:db": "serverless dynamodb start",
-    "invoke": "serverless invoke local --function main",
+    "run": "serverless invoke local --function main",
     "seed": "serverless invoke local --function seed",
     "dev": "serverless-bundle dev"
   },

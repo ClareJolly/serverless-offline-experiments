@@ -14,6 +14,7 @@ Trying out a few things using serverless offline - specifically related to AWS S
 - [Set up](#set-up)
 - [Troubleshooting](#troubleshooting)
   - [In case the ports stay open](#in-case-the-ports-stay-open)
+  - [To delete the .webpack folders and file](#to-delete-the-webpack-folders-and-file)
 - [Acknowledgements](#acknowledgements)
 
 ---
@@ -34,7 +35,8 @@ Note: for some reason I am having to run these commands with `sudo` - I need to 
 
 - install database `sudo yarn install:db`
 - start database `sudo yarn start:db`
-- invoke main lambda `sudo yarn invoke`
+- seed the database `sudo yarn seed`
+- run main lambda `sudo yarn run`
 
 ~~- start offline server: `sudo yarn start:offline`~~
 
@@ -49,6 +51,12 @@ sudo lsof -i :8000
 sudo lsof -i :3000
 sudo lsof -i :8002
 ```
+
+---
+
+### To delete the .webpack folders and file
+
+`sudo rm -rf .webpack`
 
 ---
 
