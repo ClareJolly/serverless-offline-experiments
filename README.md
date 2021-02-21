@@ -2,9 +2,9 @@
 
 Trying out a few things using serverless offline - specifically related to AWS Services:
 
-- lambda
-- dynamoDb
-- S3
+- [x] lambda
+- [x] dynamoDb
+- [ ] S3
 
 ---
 
