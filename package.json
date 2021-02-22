@@ -9,6 +9,7 @@
     "start:db": "serverless dynamodb start",
     "run": "serverless invoke local --function main",
     "seed": "serverless invoke local --function seed",
+    "s3": "serverless invoke local --function s3",
     "dev": "serverless-bundle dev"
   },
   "dependencies": {

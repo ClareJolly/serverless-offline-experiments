@@ -4,7 +4,7 @@ Trying out a few things using serverless offline - specifically related to AWS S
 
 - [x] lambda
 - [x] dynamoDb
-- [ ] S3
+- [x] S3
 
 ---
 
@@ -34,11 +34,11 @@ Clone the repo
 Note: for some reason I am having to run these commands with `sudo` - I need to look into why and alternative solutions
 
 - install database `sudo yarn install:db`
-- start database `sudo yarn start:db`
+  ~~- start database only `sudo yarn start:db`~~
+  ~~- start offline server (db and s3 and rest): `sudo yarn start:offline`~~
 - seed the database `sudo yarn seed`
+- s3 test `sudo yarn s3`
 - run main lambda `sudo yarn run`
-
-~~- start offline server: `sudo yarn start:offline`~~
 
 ---
 

@@ -11,16 +11,16 @@ provider:
 
 plugins:
   - serverless-dynamodb-local
-  - serverless-bundle
   - serverless-s3-local
+  - serverless-bundle
   - serverless-offline  # should be last in list
 
 custom:
   bundle:
     linting: true
-    copyFiles:                      # Copy any additional files to the generated package
-      - from: 'buckets/*'              # Where the files are currently
-        to: './'                      # Where in the package should they go
+    # copyFiles:                      # Copy any additional files to the generated package
+    #   - from: 'buckets/*'              # Where the files are currently
+    #     to: './'                      # Where in the package should they go
   dynamoDb: 
     start:
       port: 8000
@@ -37,14 +37,14 @@ custom:
   s3:
     address: localhost
     host: localhost
-    directory: '/buckets'
-    noStart: false
+    directory: '/tmp'
+    # noStart: false
 
   tableNames:
     persons: 'cc-persons'
 
-  bucketNames:
-    personsImages: 'cc-person-images'
+  # bucketNames:
+  #   personsImages: 'cc-person-images'
 
   dynamodb:
     start:
@@ -59,6 +59,12 @@ functions:
     handler: src/index.handler
   seed:
     handler: utils/seed/index.handler
+  s3:
+    handler: utils/s3/index.webhook
+    events:
+      - http:
+        method: GET
+        path: /
 
   persons:
     timeout: 30

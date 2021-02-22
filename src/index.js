@@ -8,7 +8,7 @@ const CONFIG_PERSONS_DYNAMODB_ENDPOINT = process.env.CONFIG_DYNAMODB_ENDPOINT
 const IS_OFFLINE = process.env.IS_OFFLINE
 
 export const handler = async () => {
-  const server = new S3rver([options])
+  // const server = new S3rver([options])
   let dynamoDb
 
   if (IS_OFFLINE === 'true') {
