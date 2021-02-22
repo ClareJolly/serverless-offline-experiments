@@ -35,7 +35,7 @@ Note: for some reason I am having to run these commands with `sudo` - I need to 
 
 - install database `sudo yarn install:db`
   ~~- start database only `sudo yarn start:db`~~
-  ~~- start offline server (db and s3 and rest): `sudo yarn start:offline`~~
+- start offline server (db and s3 and rest): `sudo yarn start:offline`
 - seed the database `sudo yarn seed`
 - s3 test `sudo yarn s3`
 - run main lambda `sudo yarn run`
