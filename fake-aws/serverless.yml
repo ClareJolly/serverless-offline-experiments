@@ -16,11 +16,16 @@ plugins:
   - serverless-offline  # should be last in list
 
 custom:
+  # webpack:
+  #   webpackConfig: 'webpack.config.js'   # Name of webpack configuration file
+  #   includeModules: false   # Node modules configuration for packaging
+  #   packager: 'npm'   # Packager that will be used to package your external modules
+  #   excludeFiles: src/**/*.test.js # Provide a glob for files to ignore
   bundle:
     linting: true
-    # copyFiles:                      # Copy any additional files to the generated package
-    #   - from: 'buckets/*'              # Where the files are currently
-    #     to: './'                      # Where in the package should they go
+  #   copyFiles:                      # Copy any additional files to the generated package
+  #     - from: 'utils/seed/data/*.json'              # Where the files are currently
+  #       to: './'                      # Where in the package should they go
   dynamoDb: 
     start:
       port: 8000
@@ -37,7 +42,7 @@ custom:
   s3:
     address: localhost
     host: localhost
-    directory: '/tmp'
+    directory: './tmp'
     # noStart: false
 
   tableNames:
@@ -55,16 +60,16 @@ custom:
 
 
 functions:
-  main:
-    handler: src/index.handler
-  seed:
-    handler: utils/seed/index.handler
-  s3:
-    handler: utils/s3/index.webhook
-    events:
-      - http:
-        method: GET
-        path: /
+  # main:
+  #   handler: src/index.handler
+  # seed:
+  #   handler: utils/seed/index.handler
+  # s3:
+  #   handler: utils/s3/index.webhook
+  #   events:
+  #     - http:
+  #       method: GET
+  #       path: /
 
   persons:
     timeout: 30
