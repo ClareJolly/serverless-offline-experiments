@@ -2,12 +2,15 @@
 /* eslint-disable max-statements */
 /* eslint-disable no-console */
 import AWS from 'aws-sdk'
+import dotenv from 'dotenv'
+dotenv.config()
 
 const CONFIG_PERSONS_TABLE = process.env.CONFIG_PERSONS_TABLE
 const CONFIG_PERSONS_DYNAMODB_ENDPOINT = process.env.CONFIG_DYNAMODB_ENDPOINT
 const IS_OFFLINE = process.env.IS_OFFLINE
 
 export const handler = async () => {
+  console.log('testtesttest')
   // const server = new S3rver([options])
   let dynamoDb
 

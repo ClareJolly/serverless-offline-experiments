@@ -118,4 +118,5 @@ dist
 ### Serverless ###
 # Ignore build directory
 .serverless
-fake-aws/tmp
+
+tmp

@@ -1,3 +1,6 @@
+import dotenv from 'dotenv'
+dotenv.config()
+
 const CONFIG_PERSONS_TABLE = process.env.CONFIG_PERSONS_TABLE
 import { v4 as uuidv4 } from 'uuid'
 

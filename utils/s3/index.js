@@ -1,7 +1,9 @@
 import AWS from 'aws-sdk'
 import { v4 as uuidv4 } from 'uuid'
+import dotenv from 'dotenv'
+dotenv.config()
 
-export const webhook = async (event, context, callback) => {
+export const handler = async (event, context, callback) => {
   const S3 = new AWS.S3({
     s3ForcePathStyle: true,
     accessKeyId: 'S3RVER', // This specific key is required when working offline
@@ -15,12 +17,12 @@ export const webhook = async (event, context, callback) => {
     Body: new Buffer.from('abcd'),
   }).promise()
 
-  const obj = await S3.getObject({
-    Bucket: 'local-bucket',
-    Key: 'xxxxx',
-  }).promise()
+  // const obj = await S3.getObject({
+  //   Bucket: 'local-bucket',
+  //   Key: 'xxxxx',
+  // }).promise()
 
-  console.log('obj', obj)
+  // console.log('obj', obj)
 
   const data = await S3.listObjectsV2({ Bucket: 'local-bucket' }).promise()
 
